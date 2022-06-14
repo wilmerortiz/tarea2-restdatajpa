@@ -40,7 +40,7 @@ class LaptopControllerTest {
     assertEquals(200, response.getStatusCodeValue());
 
     List<Laptop> laptops = Arrays.asList(response.getBody());
-    assertEquals(1, laptops.size());
+    assertEquals(0, laptops.size());
 
   }
 
@@ -49,8 +49,8 @@ class LaptopControllerTest {
     ResponseEntity<Laptop> response =
         testRestTemplate.getForEntity("/api/laptops/1", Laptop.class);
 
-    assertEquals(HttpStatus.OK ,response.getStatusCode());
-    assertEquals(200 ,response.getStatusCodeValue());
+    assertEquals(HttpStatus.NOT_FOUND ,response.getStatusCode());
+    assertEquals(404 ,response.getStatusCodeValue());
   }
 
   @Test

@@ -14,9 +14,7 @@ import org.springframework.security.web.firewall.StrictHttpFirewall;
 
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig {
-  public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
       http.authorizeRequests()
@@ -58,9 +56,4 @@ public class WebSecurityConfig {
       return new BCryptPasswordEncoder();
     }
 
-  /*@Bean
-  @Override
-  public UserDetailsService userDetailsServiceBean () throws Exception {
-    return super.userDetailsServiceBean();
-  }*/
 }
